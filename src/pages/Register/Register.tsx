@@ -7,7 +7,7 @@ import { useMutation } from '@tanstack/react-query'
 import { registerAccount } from '~/apis/auth.api'
 import { omit } from 'lodash'
 import { isAxiosUnprocessableEntityError } from '~/utils/utils'
-import { ResponseApi } from '~/types/utils.type'
+import { ErrorResponse } from '~/types/utils.type'
 
 type FormData = Schema
 
@@ -32,7 +32,7 @@ export default function Register() {
         console.log(data)
       },
       onError: (error) => {
-        if (isAxiosUnprocessableEntityError<ResponseApi<Omit<FormData, 'confirm_password'>>>(error)) {
+        if (isAxiosUnprocessableEntityError<ErrorResponse<Omit<FormData, 'confirm_password'>>>(error)) {
           const formError = error.response?.data.data
           if (formError) {
             Object.keys(formError).forEach((key) => {
