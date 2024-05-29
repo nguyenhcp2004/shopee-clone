@@ -13,6 +13,7 @@ import { omit } from 'lodash'
 import { purchasesStatus } from '~/constants/purchase'
 import purchaseApi from '~/apis/purchase.api'
 import { formatCurrency } from '~/utils/utils'
+import { queryClient } from '~/main'
 
 type FormData = Pick<Schema, 'name'>
 
@@ -33,6 +34,7 @@ export default function Header() {
     onSuccess: () => {
       setAuthenticated(false)
       setProfile(null)
+      queryClient.removeQueries({ queryKey: ['purchases', { status: purchasesStatus.inCart }] })
     }
   })
 
@@ -40,7 +42,8 @@ export default function Header() {
   //Chứ không bị unmount - mounting again
   const { data: purchaseInCartData } = useQuery({
     queryKey: ['purchases', { status: purchasesStatus.inCart }],
-    queryFn: () => purchaseApi.getPurchases({ status: purchasesStatus.inCart })
+    queryFn: () => purchaseApi.getPurchases({ status: purchasesStatus.inCart }),
+    enabled: isAuthenticated
   })
 
   const purchasesInCart = purchaseInCartData?.data.data
@@ -216,13 +219,16 @@ export default function Header() {
                         <div className='capitalize text-xs text-gray-500'>
                           {purchasesInCart.length > 5 ? purchasesInCart.length - MAX_PUCHASES : ''} Thêm vào giỏ hàng
                         </div>
-                        <button className='capitalize bg-orange hover:bg-opacity-90 px-4 py-2 rounded-sm text-white'>
+                        <Link
+                          to={path.cart}
+                          className='capitalize bg-orange hover:bg-opacity-90 px-4 py-2 rounded-sm text-white'
+                        >
                           Xem giỏ hàng
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   ) : (
-                    <div className='p-2 w-[300px] h-[300px] flex items-center justify-center'>
+                    <div className='p-2 w-[300px] h-[300px] flex items-center flex-col justify-center'>
                       <img
                         src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/c44984f18d2d2211.png'
                         alt='no-product'
@@ -249,9 +255,11 @@ export default function Header() {
                     d='M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z'
                   />
                 </svg>
-                <span className='absolute top-[-5px] left-[17px] text-orange px-[9px] py-[1px] bg-white text-xs rounded-full'>
-                  {purchasesInCart?.length}
-                </span>
+                {purchasesInCart && (
+                  <span className='absolute top-[-5px] left-[17px] text-orange px-[9px] py-[1px] bg-white text-xs rounded-full'>
+                    {purchasesInCart?.length}
+                  </span>
+                )}
               </Link>
             </Popover>
           </div>
