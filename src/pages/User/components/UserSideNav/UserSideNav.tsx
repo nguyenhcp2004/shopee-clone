@@ -5,7 +5,7 @@ export default function UserSideNav() {
   return (
     <div>
       <div className='flex items-center border-b border-b-gray-200 py-4'>
-        <Link to={path.profile} className='h-12 w-12 flex-shrink-0 overflow-hidden rounded-full boder border-black/10'>
+        <Link to={path.profile} className='boder h-12 w-12 flex-shrink-0 overflow-hidden rounded-full border-black/10'>
           <img
             src='https://i.pinimg.com/736x/f2/fb/46/f2fb46cda7c21018fa8f6b19abec6a9e.jpg'
             alt=''
@@ -38,7 +38,7 @@ export default function UserSideNav() {
             <img
               src='https://down-vn.img.susercontent.com/file/ba61750a46794d8847c3f463c5e71cc4'
               alt=''
-              className='w-full h-full'
+              className='h-full w-full'
             />
           </div>
           Tài khoản của tôi
@@ -48,7 +48,7 @@ export default function UserSideNav() {
             <img
               src='https://down-vn.img.susercontent.com/file/ba61750a46794d8847c3f463c5e71cc4'
               alt=''
-              className='w-full h-full'
+              className='h-full w-full'
             />
           </div>
           Đổi mật khẩu
@@ -58,7 +58,7 @@ export default function UserSideNav() {
             <img
               src='https://down-vn.img.susercontent.com/file/https://down-vn.img.susercontent.com/file/f0049e9df4e536bc3e7f140d071e9078'
               alt=''
-              className='w-full h-full'
+              className='h-full w-full'
             />
           </div>
           Đơn mua
