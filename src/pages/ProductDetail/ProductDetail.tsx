@@ -129,14 +129,14 @@ export default function ProductDetail() {
           <div className='grid grid-cols-12 gap-9'>
             <div className='col-span-5'>
               <div
-                className='relative w-full pt-[100%] shadow overflow-hidden'
+                className='relative w-full overflow-hidden pt-[100%] shadow'
                 onMouseMove={handleZoom}
                 onMouseLeave={handleRemoveZoom}
               >
                 <img
                   src={activeImage}
                   alt={product.name}
-                  className='absolute top-0 left-0 bg-white w-full h-full object-cover'
+                  className='absolute left-0 top-0 h-full w-full bg-white object-cover'
                   ref={imageRef}
                 />
               </div>
@@ -151,7 +151,7 @@ export default function ProductDetail() {
                     viewBox='0 0 24 24'
                     strokeWidth='1.5'
                     stroke='currentColor'
-                    className='w-5 h-5'
+                    className='h-5 w-5'
                   >
                     <path strokeLinecap='round' strokeLinejoin='round' d='M15.75 19.5 8.25 12l7.5-7.5' />
                   </svg>
@@ -163,7 +163,7 @@ export default function ProductDetail() {
                       <img
                         src={img}
                         alt={product.name}
-                        className='absolute top-0 left-0 bg-white w-full h-full object-cover cursor-pointer'
+                        className='absolute left-0 top-0 h-full w-full cursor-pointer bg-white object-cover'
                       />
                       {isActive && <div className='absolute inset-0 border-2 border-orange' />}
                     </div>
@@ -179,7 +179,7 @@ export default function ProductDetail() {
                     viewBox='0 0 24 24'
                     strokeWidth='1.5'
                     stroke='currentColor'
-                    className='w-5 h-5'
+                    className='h-5 w-5'
                   >
                     <path strokeLinecap='round' strokeLinejoin='round' d='m8.25 4.5 7.5 7.5-7.5 7.5' />
                   </svg>
@@ -197,7 +197,7 @@ export default function ProductDetail() {
                     nonActiveClassname='fill-gray-300 text-gray-300 h-4 w-4'
                   />
                 </div>
-                <div className='h-4 mx-4 w-[1px] bg-gray-300'></div>
+                <div className='mx-4 h-4 w-[1px] bg-gray-300'></div>
                 <div>
                   <span>{formatNumberToSocialStyle(product.sold)}</span>
                   <span className='ml-1 text-gray-500'>Đã bán</span>
@@ -228,14 +228,14 @@ export default function ProductDetail() {
                 >
                   <img
                     alt='icon-add-to-cart'
-                    className='mr-[10px] h-5 w-5 fill-current stoke-orange text-orange'
+                    className='stoke-orange mr-[10px] h-5 w-5 fill-current text-orange'
                     src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/productdetailspage/0f3bf6e431b6694a9aac.svg'
                   />
                   Thêm vào giỏ hàng
                 </button>
                 <button
                   onClick={buyNow}
-                  className='ml-4 flex h-12 min-w-[5rem] items-center justify-center rounded-sm bg-orange text-white px-5 capitalize shadow-sm outline-none hover:bg-orange/90'
+                  className='ml-4 flex h-12 min-w-[5rem] items-center justify-center rounded-sm bg-orange px-5 capitalize text-white shadow-sm outline-none hover:bg-orange/90'
                 >
                   Mua ngay
                 </button>
@@ -247,7 +247,7 @@ export default function ProductDetail() {
       <div className='container'>
         <div className='mt-8 bg-white p-4 shadow'>
           <div className='rounded bg-gray-50 p-4 text-lg uppercase text-slate-700'>Mô tả sản phẩm</div>
-          <div className='mt-12 mx-4 mb-4 text-sm leading-loose'>
+          <div className='mx-4 mb-4 mt-12 text-sm leading-loose'>
             <div
               dangerouslySetInnerHTML={{
                 __html: DOMPurify.sanitize(product.description)
@@ -259,7 +259,7 @@ export default function ProductDetail() {
       <div className='mt-8'>
         <div className='container'>
           <div className='uppercase text-gray-400'>Có thể bạn cũng thích</div>
-          <div className='mt-6 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3'>
+          <div className='mt-6 grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'>
             {productsData &&
               productsData.data.data.products.map((product) => (
                 <div className='col-span-1' key={product._id}>
