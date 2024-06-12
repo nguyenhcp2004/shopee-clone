@@ -13,11 +13,11 @@ const userApi = {
   },
 
   updateProfile(body: BodyUpdateProfile) {
-    return http.put('user', body)
+    return http.put<SucccessResponse<User>>('user', body)
   },
 
   uploadAvatar(body: FormData) {
-    return http.post('user/upload-avatar', body, {
+    return http.post<SucccessResponse<string>>('user/upload-avatar', body, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
