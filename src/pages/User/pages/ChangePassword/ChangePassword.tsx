@@ -55,7 +55,7 @@ export default function ChangePassword() {
         <div className='mt-1 text-sm text-gray-700'>Quản lý thông tin hồ sơ để bảo mật tài khoản</div>
       </div>
 
-      <form className='mt-8 flex flex-col-reverse md:flex-row md:items-start' onSubmit={onSubmit}>
+      <form className='mr-auto mt-8 max-w-2xl' onSubmit={onSubmit}>
         <div className='mt-6 flex-grow md:mt-0 md:pr-12'>
           <div className='mt-2 flex flex-col flex-wrap sm:flex-row'>
             <div className='truncate pt-3 capitalize sm:w-[20%] sm:text-right'>Mật khẩu cũ</div>
