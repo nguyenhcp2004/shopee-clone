@@ -19,13 +19,12 @@ export default function ProductList() {
     placeholderData: keepPreviousData,
     staleTime: 3 * 60 * 1000
   })
-  // console.log(data)
 
   const { data: categories } = useQuery({
     queryKey: ['categories'],
     queryFn: () => categoryApi.getCategory()
   })
-  // console.log(product, categories)
+
   return (
     <div className='bg-gray-200 py-6'>
       <div className='container'>
