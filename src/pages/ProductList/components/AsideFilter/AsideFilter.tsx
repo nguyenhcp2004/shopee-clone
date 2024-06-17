@@ -9,7 +9,7 @@ import { Schema, schema } from '~/utils/rule'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { NoUndefinedField } from '~/types/utils.type'
 import RatingStar from '../RatingStar'
-import { omit } from 'lodash'
+import omit from 'lodash/omit'
 import { QueryConfig } from '~/hooks/useQueryConfig'
 // import InputV2 from '~/components/InputV2'
 

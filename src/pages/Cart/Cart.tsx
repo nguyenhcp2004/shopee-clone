@@ -9,7 +9,7 @@ import { purchasesStatus } from '~/constants/purchase'
 import { Purchase } from '~/types/purchase.type'
 import { formatCurrency, generateNameId } from '~/utils/utils'
 import { produce } from 'immer'
-import { keyBy } from 'lodash'
+import keyBy from 'lodash/keyBy'
 import { toast } from 'react-toastify'
 import { AppContext } from '~/contexts/app.context'
 
@@ -151,7 +151,7 @@ export default function Cart() {
           <>
             <div className='overflow-auto'>
               <div className='min-w-[1000px]'>
-                <div className='grid grid-cols-12 rounded-sm bg-white py-5 px-9 text-sm capitalize text-gray-500 shadow'>
+                <div className='grid grid-cols-12 rounded-sm bg-white px-9 py-5 text-sm capitalize text-gray-500 shadow'>
                   <div className='col-span-6'>
                     <div className='flex items-center'>
                       <div className='flex flex-shrink-0 items-center justify-center pr-3'>
@@ -180,7 +180,7 @@ export default function Cart() {
                     {extendedPurchases.map((purchase, index) => (
                       <div
                         key={purchase._id}
-                        className='grid items-center grid-cols-12 rounded-sm border border-gray-200 bg-white py-5 px-4 text-center text-sm text-gray-500 first:mt-0 mb-5'
+                        className='mb-5 grid grid-cols-12 items-center rounded-sm border border-gray-200 bg-white px-4 py-5 text-center text-sm text-gray-500 first:mt-0'
                       >
                         <div className='col-span-6'>
                           <div className='flex'>
@@ -201,7 +201,7 @@ export default function Cart() {
                                   >
                                     <img src={purchase.product.image} alt={purchase.product.name} />
                                   </Link>
-                                  <div className='px-2 pt-1 pb-2 flex-grow'>
+                                  <div className='flex-grow px-2 pb-2 pt-1'>
                                     <Link
                                       to={`${path.home}${generateNameId({ name: purchase.product.name, id: purchase.product._id })}`}
                                       className='line-clamp-2 text-left'
@@ -264,7 +264,7 @@ export default function Cart() {
                 )}
               </div>
             </div>
-            <div className='sticky bottom-0 flex flex-col sm:flex-row sm:items-center rounded-sm border border-gray-100 bg-white p-5 shadow mt-8'>
+            <div className='sticky bottom-0 mt-8 flex flex-col rounded-sm border border-gray-100 bg-white p-5 shadow sm:flex-row sm:items-center'>
               <div className='flex items-center'>
                 <div className='flex flex-shrink-0 items-center justify-center pr-3'>
                   <input
@@ -292,7 +292,7 @@ export default function Cart() {
                   </div>
                 </div>
                 <Button
-                  className='w-52 h-10 text-center mt-5 uppercase bg-red-500 text-white text-sm hover:bg-red-600 flex justify-center items-center sm:mt-0 sm:ml-4'
+                  className='mt-5 flex h-10 w-52 items-center justify-center bg-red-500 text-center text-sm uppercase text-white hover:bg-red-600 sm:ml-4 sm:mt-0'
                   onClick={handleBuyPurchases}
                   disabled={buyProductMutation.isPending}
                 >
@@ -303,18 +303,18 @@ export default function Cart() {
           </>
         ) : (
           <div className='text-center'>
-            <div className='text-center mt-5 '>
+            <div className='mt-5 text-center '>
               <img
                 src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/c44984f18d2d2211.png'
                 alt='no-product'
-                className='w-24 h-24 mx-auto'
+                className='mx-auto h-24 w-24'
               />
             </div>
-            <div className='font-bold text-gray-500 mt-5'>Giỏ hàng của bạn còn trống</div>
+            <div className='mt-5 font-bold text-gray-500'>Giỏ hàng của bạn còn trống</div>
             <div className='mt-5 text-center'>
               <Link
                 to={path.home}
-                className='px-10 py-2 uppercase text-white bg-orange hover:bg-orange/80 transition-all '
+                className='bg-orange px-10 py-2 uppercase text-white transition-all hover:bg-orange/80 '
               >
                 Mua ngay
               </Link>
