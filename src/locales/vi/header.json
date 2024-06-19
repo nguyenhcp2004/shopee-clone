@@ -1,0 +1,25 @@
+{
+  "profile": {
+    "myAccount": "Tài khoản của tôi",
+    "myPurchase": "Đơn mua",
+    "logout": "Đăng xuất"
+  },
+  "cart": {
+    "recentlyAdded": "Sản Phẩm Mới Thêm",
+    "viewCart": "Xem Giỏ Hàng",
+    "noProducts": "Chưa có sản phẩm",
+    "moreProductInCart": "Thêm vào giỏ hàng"
+  },
+  "searchPlaceholder": "Vui lòng tìm tên sản phẩm có dấu",
+  "registerPage": {
+    "register": "Đăng ký",
+    "password": "Mật khẩu",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "haveAnAccount": "Bạn đã có tài khoản?"
+  },
+  "loginPage": {
+    "login": "Đăng nhập",
+    "new": "Bạn mới biết đến Shopee?"
+  },
+  "needHelp": "Bạn cần giúp đỡ?"
+}

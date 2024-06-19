@@ -1,0 +1,40 @@
+{
+  "sideNav": {
+    "editProfile": "Edit Profile",
+    "myAccount": "My Account",
+    "profile": "Profile",
+    "changePassword": "Change Password",
+    "myPurchase": "My Purchase"
+  },
+  "profile": {
+    "myProfile": "My Profile",
+    "manage&protect": "Manage and protect your account",
+    "name": "Name",
+    "phoneNumber": "Phone Number",
+    "address": "Address",
+    "dateOfBirth": "Date of Birth",
+    "date": "Date",
+    "month": "Month",
+    "year": "Year",
+    "selectImage": "Select Image",
+    "fileSize": "File size: maximum",
+    "fileExtension": "File extension",
+    "toast": "Profile updated successfully",
+    "avatarError": "Image is not in the correct format or exceeds the size limit",
+    "uploadAvatarError": "Failed to upload avatar"
+  },
+  "changePassword": {
+    "changePassword": "Change Password",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "toast": "Password changed successfully"
+  },
+  "myPurchase": {
+    "completedPurchase": "Completed Purchase",
+    "quantity": "Quantity",
+    "orderTotal": "Order Total",
+    "buyAgain": "Buy Again"
+  },
+  "save": "Save"
+}

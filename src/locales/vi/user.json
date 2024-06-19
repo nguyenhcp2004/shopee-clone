@@ -1,0 +1,40 @@
+{
+  "sideNav": {
+    "editProfile": "Sửa Hồ Sơ",
+    "myAccount": "Tài Khoản Của Tôi",
+    "profile": "Hồ Sơ",
+    "changePassword": "Đổi Mật Khẩu",
+    "myPurchase": "Đơn Mua"
+  },
+  "profile": {
+    "myProfile": "Hồ Sơ Của Tôi",
+    "manage&protect": "Quản lý thông tin hồ sơ để bảo mật tài khoản",
+    "name": "Tên",
+    "phoneNumber": "Số Điện Thoại",
+    "address": "Địa Chi",
+    "dateOfBirth": "Ngày Sinh",
+    "date": "Ngày",
+    "month": "Tháng",
+    "year": "Năm",
+    "selectImage": "Chọn Ảnh",
+    "fileSize": "Dung lượng file tối đa",
+    "fileExtension": "Định dạng",
+    "toast": "Cập nhật thông tin thành công",
+    "avatarError": "Ảnh không đúng định dạng hoặc vượt quá kích thước",
+    "uploadAvatarError": "Không thể cập nhật ảnh đại diện"
+  },
+  "changePassword": {
+    "changePassword": "Đổi Mật Khẩu",
+    "currentPassword": "Mật Khẩu Hiện Tại",
+    "newPassword": "Mật Khẩu Mới",
+    "confirmPassword": "Nhập Lại Mật Khẩu",
+    "toast": "Đổi mật khẩu thành công"
+  },
+  "myPurchase": {
+    "completedPurchase": "Đơn Mua Hoàn Thành",
+    "quantity": "Số Lượng",
+    "orderTotal": "Thành Tiền",
+    "buyAgain": "Mua Lại"
+  },
+  "save": "Lưu"
+}

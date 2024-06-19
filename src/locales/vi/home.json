@@ -1,0 +1,23 @@
+{
+  "aside filter": {
+    "all categories": "Tất cả danh mục",
+    "filter search": "Bộ lọc tìm kiếm",
+    "price range": "Khoảng giá",
+    "apply": "Áp Dụng",
+    "clear all": "Xóa tất cả",
+    "rating": "Đánh giá",
+    "up": "trở lên",
+    "min": "₫ TỪ",
+    "max": "₫ ĐẾN"
+  },
+  "sortButtons": {
+    "sortBy": "Sắp Xếp Theo",
+    "relevance": "Liên Quan",
+    "popular": "Phổ Biến",
+    "latest": "Mới Nhất",
+    "topSales": "Bán Chạy",
+    "price": "Giá",
+    "ascPrice": "Giá: Thấp đến Cao",
+    "descPrice": "Giá: Cao đến Thấp"
+  }
+}

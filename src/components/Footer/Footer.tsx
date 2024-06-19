@@ -1,31 +1,54 @@
+import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import classNames from 'classnames'
+
 export default function Footer() {
+  const { t } = useTranslation('footer')
+  const countries: string[] = t('countries', { returnObjects: true })
+  const policies: string[] = t('policies', { returnObjects: true })
   return (
-    <footer className='py-16 bg-neutral-100'>
-      <div className='max-w-7xl mx-auto px-4'>
-        <div className='grid grid-cols-1 lg:grid-cols-3 gap4'>
-          <div className='lg:col-span-1'>
-            <div>© 2024 Shopee. Tất cả các quyền được bảo lưu.</div>
+    <footer className='w-full bg-neutral-100 p-9'>
+      <div className='container'>
+        <div className='mt-10 flex flex-col items-baseline justify-between text-sm text-gray-500 lg:flex-row'>
+          <div className='mx-auto flex-shrink-0 pr-6 lg:text-left'>
+            © {new Date().getFullYear()} Shopee. {t('All Rights Reserved')}
           </div>
-          <div className='lg:col-span-2'>
-            <div>
-              Quốc gia & Khu vực: Singapore Indonesia Thái Lan Malaysia Việt Nam Philippines Brazil México Colombia
-              Chile Đài Loan
-            </div>
+          <div className='mx-auto mt-2 flex flex-col flex-wrap items-center justify-center gap-1 lg:flex-row lg:gap-0'>
+            <div>{t('Country & Region')}:</div>
+            {countries.map((country, index: number) => (
+              <div key={country} className=''>
+                <Link
+                  to='/'
+                  className={classNames('border-r-gray-400 px-1.5 lg:border-r', {
+                    'pr-0 lg:border-r-0': index === countries.length - 1
+                  })}
+                >
+                  {country}
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
-        <div className='text-center text-sm mt-10'>
-          <div>Công ty TNHH Shopee</div>
-          <div className='mt-6'>
-            Địa chỉ: Tầng 4-5-6, Tòa nhà Capital Place, số 29 đường Liễu Giai, Phường Ngọc Khánh, Quận Ba Đình, Thành
-            phố Hà Nội, Việt Nam. Tổng đài hỗ trợ: 19001221 - Email: cskh@hotro.shopee.vn
-          </div>
-          <div className='mt-2'>
-            Chịu Trách Nhiệm Quản Lý Nội Dung: Nguyễn Đức Trí - Điện thoại liên hệ: 024 73081221 (ext 4678)
-          </div>
-          <div className='mt-2'>
-            Mã số doanh nghiệp: 0106773786 do Sở Kế hoạch & Đầu tư TP Hà Nội cấp lần đầu ngày 10/02/2015
-          </div>
-          <div className='mt-2'>© 2015 - Bản quyền thuộc về Công ty TNHH Shopee</div>
+        <div className='item-center mt-20 flex flex-col items-center justify-center gap-1 text-sm text-gray-500 lg:flex-row lg:gap-0'>
+          {policies.map((policy, index: number) => (
+            <div key={policy}>
+              <Link
+                to='/'
+                className={classNames('border-r-gray-200 md:px-2 lg:border-r lg:px-8', {
+                  'pr-0 lg:border-r-0': index === policies.length - 1
+                })}
+              >
+                {policy}
+              </Link>
+            </div>
+          ))}
+        </div>
+        <div className='mt-12 flex flex-col gap-1.5 text-center text-xs text-gray-500'>
+          <p className='mb-4'>{t('Shopee Company Limited')}</p>
+          <p>{t('address')}</p>
+          <p>{t('personInCharge')}</p>
+          <p>{t('registration')}</p>
+          <p>{t('copyright')}</p>
         </div>
       </div>
     </footer>

@@ -1,0 +1,23 @@
+{
+  "aside filter": {
+    "all categories": "All categories",
+    "filter search": "Filter",
+    "price range": "Price Range",
+    "apply": "Apply",
+    "clear all": "Clear All",
+    "rating": "Rating",
+    "up": "& Up",
+    "min": "₫ MIN",
+    "max": "₫ MAX"
+  },
+  "sortButtons": {
+    "sortBy": "Sort By",
+    "relevance": "Relevance",
+    "popular": "Popular",
+    "latest": "Latest",
+    "topSales": "Top Sales",
+    "price": "Price",
+    "ascPrice": "Price: Low to High",
+    "descPrice": "Price: High to Low"
+  }
+}

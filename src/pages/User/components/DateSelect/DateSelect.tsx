@@ -1,5 +1,6 @@
 import range from 'lodash/range'
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface Props {
   onChange?: (value: Date) => void
@@ -8,6 +9,7 @@ interface Props {
 }
 
 export default function DateSelect({ value, onChange, errorMessage }: Props) {
+  const { t } = useTranslation('user')
   const [date, setDate] = useState({
     date: value?.getDate() || 1,
     month: value?.getMonth() || 0,
@@ -37,7 +39,7 @@ export default function DateSelect({ value, onChange, errorMessage }: Props) {
   }
   return (
     <div className='mt-2 flex flex-wrap'>
-      <div className='truncate pt-3 capitalize sm:w-[20%] sm:text-right'>Ngày sinh</div>
+      <div className='truncate pt-3 capitalize sm:w-[20%] sm:text-right'>{t('profile.dateOfBirth')}</div>
       <div className='sm:w-[80%] sm:pl-5'>
         <div className='flex justify-between'>
           <select
@@ -46,7 +48,7 @@ export default function DateSelect({ value, onChange, errorMessage }: Props) {
             name='date'
             value={value?.getDate() || date.date}
           >
-            <option disabled>Ngày</option>
+            <option disabled>{t('profile.date')}</option>
             {range(1, 32).map((item) => (
               <option value={item} key={item}>
                 {item}
@@ -59,7 +61,7 @@ export default function DateSelect({ value, onChange, errorMessage }: Props) {
             name='month'
             value={value?.getMonth() || date.month}
           >
-            <option disabled>Tháng</option>
+            <option disabled>{t('profile.month')}</option>
             {range(0, 12).map((item) => (
               <option value={item + 1} key={item}>
                 {item + 1}
@@ -72,7 +74,7 @@ export default function DateSelect({ value, onChange, errorMessage }: Props) {
             name='year'
             value={value?.getFullYear() || date.year}
           >
-            <option disabled>Năm</option>
+            <option disabled>{t('profile.year')}</option>
             {range(1990, 2026).map((item) => (
               <option value={item} key={item}>
                 {item}

@@ -9,9 +9,11 @@ import purchaseApi from '~/apis/purchase.api'
 import { formatCurrency } from '~/utils/utils'
 import NavHeader from '../NavHeader'
 import useSearchProduct from '~/hooks/useSearchProduct'
+import { useTranslation } from 'react-i18next'
 
 const MAX_PUCHASES = 5
 export default function Header() {
+  const { t } = useTranslation('header')
   const { onSubmitSearch, register } = useSearchProduct()
   const { isAuthenticated } = useContext(AppContext)
 
@@ -68,7 +70,7 @@ export default function Header() {
                 <div className='relative max-w-[400px] rounded-sm border border-gray-200 bg-white text-sm shadow-md'>
                   {purchasesInCart && purchasesInCart.length > 0 ? (
                     <div className='p-2'>
-                      <div className='capitalize text-gray-400'>Sản phẩm mới thêm</div>
+                      <div className='capitalize text-gray-400'>{t('cart.recentlyAdded')}</div>
                       <div className='mt-5'>
                         {purchasesInCart.slice(0, MAX_PUCHASES).map((purchase) => (
                           <div className='mt-2 flex px-2 py-2 hover:bg-gray-100' key={purchase._id}>
@@ -90,13 +92,14 @@ export default function Header() {
                       </div>
                       <div className='mt-6 flex items-center justify-between'>
                         <div className='text-xs capitalize text-gray-500'>
-                          {purchasesInCart.length > 5 ? purchasesInCart.length - MAX_PUCHASES : ''} Thêm vào giỏ hàng
+                          {purchasesInCart.length > 5 ? purchasesInCart.length - MAX_PUCHASES : ''}{' '}
+                          {t('cart.moreProductInCart')}
                         </div>
                         <Link
                           to={path.cart}
                           className='rounded-sm bg-orange px-4 py-2 capitalize text-white hover:bg-opacity-90'
                         >
-                          Xem giỏ hàng
+                          {t('cart.viewCart')}
                         </Link>
                       </div>
                     </div>
@@ -107,7 +110,7 @@ export default function Header() {
                         alt='no-product'
                         className='h-24 w-24'
                       />
-                      <div className='mt-3 capitalize'>Chưa có sản phẩm</div>
+                      <div className='mt-3 capitalize'>{t('cart.noProducts')}</div>
                     </div>
                   )}
                 </div>
