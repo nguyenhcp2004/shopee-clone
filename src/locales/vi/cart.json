@@ -1,0 +1,17 @@
+{
+  "title": "Giỏ Hàng",
+  "product": "Sản Phẩm",
+  "unitPrice": "Đơn Giá",
+  "quantity": "Số Lượng",
+  "totalPrice": "Số Tiền",
+  "actions": "Thao tác",
+  "delete": "Xóa",
+  "item": "sản phẩm",
+  "selectAll": "Chọn Tất Cả",
+  "total": "Tổng thanh toán",
+  "saved": "Tiết kiệm",
+  "checkOut": "Mua Hàng",
+  "empty": "Giỏ hàng của bạn còn trống",
+  "shoppingNow": "Mua Ngay",
+  "checkOutToast": "Mua hàng thành công"
+}

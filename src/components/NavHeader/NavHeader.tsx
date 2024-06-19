@@ -84,7 +84,10 @@ export default function NavHeader() {
               >
                 {t('profile.myAccount')}
               </Link>
-              <Link to='/' className='block w-full px-4 py-3 text-left hover:bg-slate-100 hover:text-cyan-500'>
+              <Link
+                to={path.historyPurchase}
+                className='block w-full px-4 py-3 text-left hover:bg-slate-100 hover:text-cyan-500'
+              >
                 {t('profile.myPurchase')}
               </Link>
               <button

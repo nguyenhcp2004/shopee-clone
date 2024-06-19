@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import classNames from 'classnames'
+import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 import { Link, createSearchParams } from 'react-router-dom'
 import purchaseApi from '~/apis/purchase.api'
@@ -49,6 +50,10 @@ export default function HistoryPurchase() {
   ))
   return (
     <div>
+      <Helmet>
+        <title>{t('sideNav.myPurchase')}</title>
+        <meta name='description' content={t('sideNav.myPurchase')} />
+      </Helmet>
       <div className='overflow-auto'>
         <div className='min-w-[700px]'>
           <div className='sticky top-0 flex rounded-t-sm shadow-sm'>{purchaseTabsLink}</div>
