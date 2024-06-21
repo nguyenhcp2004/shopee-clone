@@ -14,7 +14,7 @@ import config from '~/constants/config'
 import { URL_LOGIN, URL_REFRESH_TOKEN, URL_REGISTER } from '~/apis/auth.api'
 import { isAxiosExpiredTokenError, isAxiosUnauthorizedError } from '~/utils/utils'
 import { ErrorResponse } from '~/types/utils.type'
-class Htpp {
+export class Http {
   instance: AxiosInstance
   private accessToken: string
   private refreshToken: string
@@ -137,6 +137,6 @@ class Htpp {
   }
 }
 
-const http = new Htpp().instance
+const http = new Http().instance
 
 export default http

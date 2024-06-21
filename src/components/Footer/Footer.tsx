@@ -29,7 +29,7 @@ export default function Footer() {
             ))}
           </div>
         </div>
-        <div className='item-center mt-20 flex flex-col items-center justify-center gap-1 text-sm text-gray-500 lg:flex-row lg:gap-0'>
+        <div className='mt-20 flex flex-col items-center justify-center gap-1 text-sm text-gray-500 lg:flex-row lg:gap-0'>
           {policies.map((policy, index: number) => (
             <div key={policy}>
               <Link
