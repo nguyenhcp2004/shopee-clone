@@ -14,6 +14,7 @@ import config from '~/constants/config'
 import { URL_LOGIN, URL_REFRESH_TOKEN, URL_REGISTER } from '~/apis/auth.api'
 import { isAxiosExpiredTokenError, isAxiosUnauthorizedError } from '~/utils/utils'
 import { ErrorResponse } from '~/types/utils.type'
+
 export class Http {
   instance: AxiosInstance
   private accessToken: string
